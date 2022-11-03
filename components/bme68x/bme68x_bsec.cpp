@@ -326,6 +326,7 @@ void BME68XBSECComponent::read_(int64_t trigger_time_ns) {
       inputs[num_inputs].sensor_id = BSEC_INPUT_HEATSOURCE;
       inputs[num_inputs].signal = this->temperature_offset_;
       inputs[num_inputs].time_stamp = trigger_time_ns;
+      ESP_LOGD(TAG, "bme68x offset gebruikt");
       num_inputs++;
     }
     if (BSEC_CHECK_INPUT(bsec_settings.process_data, BSEC_INPUT_HUMIDITY)) {
