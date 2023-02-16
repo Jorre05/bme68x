@@ -49,7 +49,7 @@ async def to_code(config):
     await i2c.register_i2c_device(var, config)
 
     cg.add(var.set_temperature_offset(config[CONF_TEMPERATURE_OFFSET]))
-    # cg.add(var.set_config_(config[BSEC_CONFIGURATION]))
+    #cg.add(var.set_config_(config[BSEC_CONFIGURATION]))
     cg.add(var.set_sample_rate(config[CONF_SAMPLE_RATE]))
     cg.add(
         var.set_state_save_interval(config[CONF_STATE_SAVE_INTERVAL].total_milliseconds)
@@ -68,11 +68,11 @@ async def to_code(config):
     cg.add_define("USE_BSEC")
     cg.add_library(
         "BME68x Sensor library",
-        "1.1.40406",
+        "1.1.40407",
         "https://github.com/BoschSensortec/Bosch-BME68x-Library.git",
     )
     cg.add_library(
         "BSEC2 Software Library",
-        "1.1.2061",
+        "1.4.2200",
         "https://github.com/BoschSensortec/Bosch-BSEC2-Library.git",
     )
